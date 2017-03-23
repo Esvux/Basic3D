@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+
 	<title>Basic3D</title>
 	<link rel="stylesheet" href="assets/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -101,13 +102,6 @@
 			<block type="text_print"></block>
 		</category>
 	</xml>
-	<xml id="mToolbox" style="display: none">
-		<category name="Estructuras" colour="100">
-			<block type="text_print"></block>
-		</category>
-		<category name="Variables" colour="330" custom="VARIABLE"></category>
-		<category name="Funciones" colour="220" custom="PROCEDURE"></category>
-	</xml>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/materialize.min.js"></script>
 	<script src="blockly/blockly_compressed.js"></script>
@@ -115,9 +109,7 @@
 	<script src="blockly/msg/js/es.js"></script>
 	<script>
 		$(document).ready(function() {
-		    $('ul.tabs').tabs();
 			Blockly.inject('blocklyBasico',{toolbox: document.getElementById('bToolbox')});
-			Blockly.inject('blocklyMedio',{toolbox: document.getElementById('mToolbox')});
 		});
 	</script>
 </body>
