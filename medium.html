@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic3D</title>
+	<link rel="stylesheet" href="assets/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		body { display: flex; min-height: 100vh; flex-direction: column;}
+		main { flex: 1 0 auto; }
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo center">Basic3D</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li class="active">
+						<a href="#edicion">
+							<!--<i class="material-icons left">edit</i>-->
+						Edición
+						</a>
+					</li>
+					<li>
+						<a href="#ejecutar">
+							<!--<i class="material-icons left">play_arrow</i>-->
+						Ejecutar
+						</a>
+					</li>
+					<li>
+						<a href="#errores">
+							<!--<i class="material-icons left">error</i>-->
+						Errores
+						</a>
+					</li>
+					<li>
+						<a href="#reportes">
+							<!--<i class="material-icons left">list</i>-->
+						Reportes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+	<main>
+		<div class="container" style="width: 95%;">
+			<div class="row" style="padding-top: 2em;">
+				<div class="col s12">
+					<div class="col s6">
+						<div id="blocklyMedio" style="height: 400px; width: 600px; margin-top: 1em;"></div>
+					</div>
+					<div class="col s6">
+						<h4 class="thin center">Código de tres direcciones generado</h4>
+						<div class="col s12" style="border: solid 1px rgba(0,0,0,0.2); border-radius: 5px;">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="page-footer">
+		<div class="container">
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+			© 2017 Universidad de San Carlos de Guatemala
+			</div>
+		</div>
+    </footer>
+	<xml id="mToolbox" style="display: none">
+		<category name="Estructuras" colour="100">
+			<block type="text_print"></block>
+		</category>
+		<category name="Variables" colour="330" custom="VARIABLE"></category>
+		<category name="Funciones" colour="220" custom="PROCEDURE"></category>
+	</xml>
+    <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+	<script src="assets/js/materialize.min.js"></script>
+	<script src="blockly/blockly_compressed.js"></script>
+	<script src="blockly/blocks_compressed.js"></script>
+	<script src="blockly/msg/js/es.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('ul.tabs').tabs();
+			Blockly.inject('blocklyMedio',{toolbox: document.getElementById('mToolbox')});
+		});
+	</script>
+</body>
+</html>

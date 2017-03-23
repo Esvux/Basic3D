@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic3D</title>
+	<link rel="stylesheet" href="assets/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--
+	-->
+	<style>
+		body { display: flex; min-height: 100vh; flex-direction: column;}
+		main { flex: 1 0 auto; }
+	</style>
+</head>
+<body>
+	<header>
+		<ul id="modosDeEdicion" class="dropdown-content">
+			<li><a href="#!">Básica</a></li>
+			<li><a href="#!">Intermedia</a></li>
+			<li><a href="#!">Avanzada</a></li>
+		</ul>
+		<nav>
+			<div class="nav-wrapper teal">
+				<a href="#" class="brand-logo center">Basic3D</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li class="active">
+						<a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
+							<i class="material-icons left">edit</i>
+						Edición
+						</a>
+					</li>
+					<li>
+						<a href="#ejecutar">
+							<i class="material-icons left">bug_report</i>
+						Debug
+						</a>
+					</li>
+					<li>
+						<a href="#errores">
+							<i class="material-icons left">error</i>
+						Errores
+						</a>
+					</li>
+					<li>
+						<a href="#reportes">
+							<i class="material-icons left">list</i>
+						Reportes
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container" style="width: 95%;">
+			<div class="row" style="padding-top: 2em;">
+				<div class="col s12">
+					<div class="col s6">
+						<div id="blocklyBasico" style="height: 480px; width: 600px; margin-top: 1em;"></div>
+					</div>
+					<div class="col s6" style="height: 494px; border: solid 1px rgba(0,0,0,0.2); border-radius: 5px;">
+						<div class="col s8">
+							<h5 class="thin center">Código de tres direcciones</h4>
+						</div>
+						<div class="col s4" style="padding-top: 0.3em;">
+							<a href="#" class="btn"><i class="material-icons right">play_arrow</i>Ejecutar</a>
+						</div>
+						<textarea style="border: solid 1px rgba(0,0,0,0.2); height: 87%; font-family: monospace;" cols="30" rows="60"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="page-footer teal">
+		<div class="container">
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+			© 2017 Universidad de San Carlos de Guatemala
+			</div>
+		</div>
+    </footer>
+	<xml id="bToolbox" style="display: none">
+		<category name="Variables" colour="330" custom="VARIABLE"></category>
+		<category name="Control" colour="230">
+			<block type="controls_if"></block>		
+		</category>
+		<category name="Ciclos" colour="130">
+			<block type="controls_repeat_ext"></block>
+			<block type="controls_whileUntil"></block>
+		</category>
+		<category name="Condiciones" colour="150">
+			<block type="logic_compare"></block>
+		</category>
+		<category name="Valores" colour="250">
+			<block type="math_number"></block>
+			<block type="math_arithmetic"></block>
+			<block type="text"></block>
+		</category>
+		<category name="Primitivas" colour="300">
+			<block type="text_print"></block>
+		</category>
+	</xml>
+	<xml id="mToolbox" style="display: none">
+		<category name="Estructuras" colour="100">
+			<block type="text_print"></block>
+		</category>
+		<category name="Variables" colour="330" custom="VARIABLE"></category>
+		<category name="Funciones" colour="220" custom="PROCEDURE"></category>
+	</xml>
+    <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+	<script src="assets/js/materialize.min.js"></script>
+	<script src="blockly/blockly_compressed.js"></script>
+	<script src="blockly/blocks_compressed.js"></script>
+	<script src="blockly/msg/js/es.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('ul.tabs').tabs();
+			Blockly.inject('blocklyBasico',{toolbox: document.getElementById('bToolbox')});
+			Blockly.inject('blocklyMedio',{toolbox: document.getElementById('mToolbox')});
+		});
+	</script>
+</body>
+</html>
