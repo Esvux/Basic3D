@@ -5,6 +5,8 @@
 	<title>Basic3D</title>
 	<link rel="stylesheet" href="assets/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--
+	-->
 	<style>
 		body { display: flex; min-height: 100vh; flex-direction: column; }
 		main { flex: 1 0 auto; }
@@ -19,7 +21,7 @@
 		</ul>
 		<nav>
 			<div class="nav-wrapper teal">
-				<a href="index.html" class="brand-logo center thin">Basic3D <small>(modo intermedio)</small></a>
+				<a href="index.html" class="brand-logo center thin">Basic3D <small>(modo básico)</small></a>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li class="active">
 						<a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
@@ -62,24 +64,16 @@
 			<div class="row" style="padding-top: 2em;">
 				<div class="col s12">
 					<div class="col s6">
-						<div id="blocklyMedio" style="height: 400px; width: 600px; margin-top: 1em;"></div>
+						<div id="blocklyBasico" style="height: 480px; width: 600px; margin-top: 1em;"></div>
 					</div>
-					<div class="col s6">
-						<h4 class="thin center">Código de tres direcciones generado</h4>
-						<div class="col s12" style="border: solid 1px rgba(0,0,0,0.2); border-radius: 5px;">
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
+					<div class="col s6" style="height: 494px; border: solid 1px rgba(0,0,0,0.2); border-radius: 5px;">
+						<div class="col s8">
+							<h5 class="thin center">Código de tres direcciones</h4>
 						</div>
+						<div class="col s4" style="padding-top: 0.3em;">
+							<a href="#" class="btn"><i class="material-icons right">play_arrow</i>Ejecutar</a>
+						</div>
+						<textarea style="border: solid 1px rgba(0,0,0,0.2); height: 87%; font-family: monospace;" cols="30" rows="60"></textarea>
 					</div>
 				</div>
 			</div>
@@ -94,12 +88,26 @@
 			</div>
 		</div>
     </footer>
-	<xml id="mToolbox" style="display: none">
-		<category name="Estructuras" colour="100">
+	<xml id="bToolbox" style="display: none">
+		<category name="Variables" colour="330" custom="VARIABLE"></category>
+		<category name="Control" colour="230">
+			<block type="controls_if"></block>		
+		</category>
+		<category name="Ciclos" colour="130">
+			<block type="controls_repeat_ext"></block>
+			<block type="controls_whileUntil"></block>
+		</category>
+		<category name="Condiciones" colour="150">
+			<block type="logic_compare"></block>
+		</category>
+		<category name="Valores" colour="250">
+			<block type="math_number"></block>
+			<block type="math_arithmetic"></block>
+			<block type="text"></block>
+		</category>
+		<category name="Primitivas" colour="300">
 			<block type="text_print"></block>
 		</category>
-		<category name="Variables" colour="330" custom="VARIABLE"></category>
-		<category name="Funciones" colour="220" custom="PROCEDURE"></category>
 	</xml>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/materialize.min.js"></script>
@@ -108,8 +116,7 @@
 	<script src="blockly/msg/js/es.js"></script>
 	<script>
 		$(document).ready(function() {
-		    $('ul.tabs').tabs();
-			Blockly.inject('blocklyMedio',{toolbox: document.getElementById('mToolbox')});
+			Blockly.inject('blocklyBasico',{toolbox: document.getElementById('bToolbox')});
 		});
 	</script>
 </body>
