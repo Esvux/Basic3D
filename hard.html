@@ -18,8 +18,8 @@
 			<li><a href="hard.html">Avanzada</a></li>
 		</ul>
 		<nav>
-			<div class="nav-wrapper teal">
-				<a href="index.html" class="brand-logo center thin">Basic3D <small>(modo avanzado)</small></a>
+			<div class="nav-wrapper teal darken-4">
+				<a href="index.html" class="brand-logo right thin" style="padding-right: 1em;">Basic3D <small>(modo avanzado)</small></a>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li class="active">
 						<a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
@@ -30,7 +30,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="debug.html">
+						<a target="_blank" href="debug.html">
 							<!--
 							-->
 							<i class="material-icons left">bug_report</i>
@@ -38,11 +38,11 @@
 						</a>
 					</li>
 					<li>
-						<a href="#errores">
+						<a href="#optimizacion">
 							<!--
 							-->
-							<i class="material-icons left">error</i>
-						Errores
+							<i class="material-icons left">trending_up</i>
+						Optimizar
 						</a>
 					</li>
 					<li>
@@ -61,31 +61,46 @@
 		<div class="container" style="width: 95%;">
 			<div class="row" style="padding-top: 2em;">
 				<div class="col s12">
-					<div class="col s6">
-						<div id="blocklyMedio" style="height: 400px; width: 600px; margin-top: 1em;"></div>
-					</div>
-					<div class="col s6">
-						<h4 class="thin center">Código de tres direcciones generado</h4>
-						<div class="col s12" style="border: solid 1px rgba(0,0,0,0.2); border-radius: 5px;">
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
+					<div class="col s6" style="height: 510px;">
+						<h5 class="light col s8">Programa en Basic3D</h5>
+						<div class="col s4">
+							<a href="#" class="btn-floating darken-2 blue"><i class="material-icons">file_upload</i></a>
+							<a href="#" class="btn-floating lighten-2 light-blue"><i class="material-icons">file_download</i></a>
+							<a href="#" class="btn-floating darken-2 green"><i class="material-icons">play_arrow</i></a>
+							<a href="#" class="btn-floating darken-4 teal"><i class="material-icons">bug_report</i></a>
 						</div>
+						<textarea name="s3d" id="s3d" cols="30" rows="10" style="border: solid 1px rgba(0,0,0,0.2); height: 85%; font-family: monospace;">
+Principal(){
+	outStr("Hola mundo");
+}
+						</textarea>
+					</div>
+					<div class="col s6" style="height: 510px;">
+						<h5 class="light col s8">Estructuras</h5>
+						<div class="col s4">
+							<a href="#" class="btn-floating darken-2 blue"><i class="material-icons">file_upload</i></a>
+							<a href="#" class="btn-floating lighten-2 light-blue"><i class="material-icons">file_download</i></a>
+						</div>
+						<textarea name="b3d" id="b3d" cols="30" rows="10" style="border: solid 1px rgba(0,0,0,0.2); height: 85%; font-family: monospace;">
+elemento : Nodo { % Definición del elemento Nodo
+	Persona valor : NULL;
+	str cadena : “Hola”;
+	Nodo izq : NULL;
+	Nodo der : NULL;
+}
+
+elemento : Persona { % Definición del elemento Persona
+	num edad : 15 * 4;
+	str nombre : “Esvin”;
+	str auxiliatura : “Compiladores 2”;
+}
+						</textarea>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
-	<footer class="page-footer teal darken-2">
+	<footer class="page-footer teal darken-4">
 		<div class="container">
 		</div>
 		<div class="footer-copyright">
@@ -94,22 +109,11 @@
 			</div>
 		</div>
 	</footer>
-	<xml id="mToolbox" style="display: none">
-		<category name="Estructuras" colour="100">
-			<block type="text_print"></block>
-		</category>
-		<category name="Variables" colour="330" custom="VARIABLE"></category>
-		<category name="Funciones" colour="220" custom="PROCEDURE"></category>
-	</xml>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/materialize.min.js"></script>
-	<script src="blockly/blockly_compressed.js"></script>
-	<script src="blockly/blocks_compressed.js"></script>
-	<script src="blockly/msg/js/es.js"></script>
 	<script>
 		$(document).ready(function() {
 		    $('ul.tabs').tabs();
-			Blockly.inject('blocklyMedio',{toolbox: document.getElementById('mToolbox')});
 		});
 	</script>
 </body>
