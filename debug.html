@@ -50,7 +50,7 @@
 					</table>
 				</div>
 				<div class="col s2 green lighten-5" style="position: absolute; margin-left: 648px; height: 100%;">
-					<h5 class="thin">Heap <span class="light">H=25</span></h5>
+					<h5 class="thin">Heap <span class="light">H=12</span></h5>
 					<hr>
 					<div class="col s12">
 						<table style="font-size: 11px;">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 				<div class="col s4 orange lighten-5" style="position: absolute; margin-left: 876px; height: 100%;">
-					<h5 class="thin">Pool <span class="light">S=60</span></h5>
+					<h5 class="thin">String Pool <span class="light">S=60</span></h5>
 					<hr>
 					<table style="font-size: 11px;">
 						<tr><th width="6em;">Posición</th><th>Valor</th></tr>
@@ -94,10 +94,10 @@
 			i = 0;
 			content = ""; 
 			claro = true;
-			ambitos = [4, 12, 17, 21];
+			ambitos = [{"pos" : 12, "valor": "ámbito de Principal"}, {"pos" : 17, "valor": "ámbito de Buscar"}, {"pos" : 21, "valor": "ámbito de Comparar"}];
 			for (j = 0; j < ambitos.length; j++) {
-				while(i<ambitos[j]) {
-					content += "<tr class='blue " + (claro ? "lighten-1" : "lighten-3") + "'><td>" + (i++) + "</td><td></td></tr>";
+				while(i<ambitos[j].pos) {
+					content += "<tr class='blue " + (claro ? "lighten-1" : "lighten-3") + "'><td>" + (i++) + "</td><td>"+ambitos[j].valor+"</td></tr>";
 				}
 				claro = !claro;
 			}
@@ -106,10 +106,10 @@
 			i = 0;
 			content = "";
 			claro = true;
-			ambitos = [3, 6, 9, 12, 18, 25];
+			ambitos = [ {"pos" : 7, "valor" : "Árbol:arbolito"},  {"pos" : 12, "valor" : "Nodo:Raíz"}];
 			for (j = 0; j < ambitos.length; j++) {
-				while(i<ambitos[j]) {
-					content += "<tr class='green " + (claro ? "lighten-1" : "lighten-3") + "'><td>" + (i++) + "</td><td></td></tr>";
+				while(i<ambitos[j].pos) {
+					content += "<tr class='green " + (claro ? "lighten-1" : "lighten-3") + "'><td>" + (i++) + "</td><td>"+ambitos[j].valor+"</td></tr>";
 				}
 				claro = !claro;
 			}
